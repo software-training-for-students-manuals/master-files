@@ -1,0 +1,52 @@
+
+/* SECTION 6: tables and instruction lists
+========================================================================== */
+
+/* tables */
+
+table {
+    margin: 1.5em auto 1.5em auto;
+    width: 100%;
+    max-width: calc(100% - 2rem)!important;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-spacing: 0;
+    font-size: 1em;
+    line-height: 150%;
+    clear: both;
+    @include mobile {
+        max-width: calc(100% - 2rem);
+    }
+    
+    tbody {
+        max-width: 100%;
+    }
+
+
+    td,
+    th {
+        padding: 0.75em;
+        border: 1px solid #ccc;
+        font-family: $body-font-family;
+        font-weight: $body-font-weight;
+        text-align: center;
+
+        @media print {
+            padding: 0.5em;
+        }
+    }
+
+    th {
+        background-color: $uw-gray-blue;    
+        font-weight: 900;
+    }
+    tr:nth-of-type(even) 
+    {
+        background-color: $uw-light-gray;    
+        background-color: white;    
+    }
+
+    @media print {
+        font-size: 0.8em;
+    }
+}

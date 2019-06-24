@@ -1,0 +1,57 @@
+/* SECTION 8: inline text formatting
+   ========================================================================== */
+
+/* type text */
+.type,
+.type-text {
+  font-size: 0.95em;
+  font-family: $fixed-width-font;
+  background-color: #d7d7d7;
+//    padding-top: 0!important;
+  border-radius: 0.25em;
+            overflow-wrap: break-word;
+        word-wrap: break-word;
+        overflow-x: scroll;
+//    background-color: #333;
+//    color: white;
+
+}
+
+/* inline keyboard icons */
+
+kbd {
+  display: inline-block;
+  margin: 0 .1em;
+  padding: .1em .6em;
+  font-family: $fixed-width-font;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #242729;
+  text-shadow: 0 1px 0 #FFF;
+  background-color: #e1e3e5;
+  border: 1px solid #adb3b9;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(12, 13, 14, 0.2), 0 0 0 2px #FFF inset;
+  white-space: nowrap;
+}
+
+/* highlighted text */
+/* also change type-text if it is highlighted */
+
+.highlight,
+.type-highlight,
+.highlight-type,
+.type-text .highlight ,
+.highlight .type-text {
+  background-color: hsl(190,80%,80%);
+  border-radius: 0.25em;
+    padding: .125rem .25rem!important;
+}
+
+.type-highlight,
+.highlight-type {
+    
+font-family: $fixed-width-font;
+//    background-color: $uw-darker-gray;
+//    color: white;
+}

@@ -1,0 +1,68 @@
+/* SECTION 4: sidebar elements
+========================================================================== */
+
+/* sidebar notes */
+aside,
+.sidebar,
+.sidebar-note {
+    padding: .5em;
+    margin: 1em 0 1em 1em;
+    width: 16em;
+    float: right;
+    border: 0.25em solid #b2ebff;
+    font-size: 1em;
+    background-color: white;
+
+    border-radius: 0.5em;
+    clear: both;
+    overflow: hidden;
+    @include mobile{
+        float: none;
+        margin: 1rem auto;
+        max-width: 80%;
+    }
+    * {
+        padding: 0;
+    }
+ 
+    h2 {
+        margin: 0;
+        padding: 0.4em;
+        font-size: 1.125em;
+        font-weight: $heading-font-weight;
+        background-color: #f2fbff;
+        text-align: center;
+    }
+
+    img {
+        width: 95%;
+        margin: 0.25em auto 0.25em auto;
+        padding: 0em;
+        display: block;
+        border-radius: 0.25em;
+    }
+
+    ul, ol {
+        margin: 0.75em 0 0.75em 2.5em;
+
+        p {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    }
+
+    p {
+        margin: 0.75em !important;
+        padding: 0em !important;
+        font-size: 0.85em;
+        line-height: 140%;
+
+        @media print {
+            font-size: 0.7em;
+        }
+    }
+
+    @media print {
+        width: 13em;
+    }
+}

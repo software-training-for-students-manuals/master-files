@@ -1,0 +1,151 @@
+
+/* SECTION 7: coloring code and formatting code blocks
+========================================================================== */
+
+/* code block formatting */
+
+code {
+    font-family: $fixed-width-font;
+    font-size: 0.9em;
+//    line-height: 2.5;
+    padding: 1rem;
+    margin-left: 1em;
+    margin-bottom: 2em;
+    margin-top: 1.5em;
+    @include rounded;
+    font-weight: 900;
+
+    clear: both;
+//        background-color: rgba(100,100,100,.5);
+//        color: white;
+
+    @media print {
+        font-size: 0.8em;
+    }
+
+    @include mobile {
+        box-sizing: border-box;
+        max-width: 100%!important;
+        width: 100%;
+        white-space: pre-wrap;
+        margin-left: 0;
+        padding: .5rem;
+        overflow-x: scroll;
+        * {
+            font-size: 1rem;
+        }
+    }
+
+}
+
+@include mobile {
+
+//    .type-text,
+    pre,
+    code {
+        white-space: pre-wrap;
+        box-sizing: border-box;
+        max-width: 100%!important;
+        width: 100%;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        overflow-x: scroll;
+        font-size: .75rem;
+
+
+    }
+
+}
+
+/* code coloring */
+
+.hljs {
+    display: block;
+    background: #333;
+    overflow-x: auto;
+    color: white;
+}
+
+.hljs-name,
+.hljs-strong {
+    font-weight: bold;
+}
+
+.hljs-code,
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-tag {
+    color: #62c8f3;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-selector-id,
+.hljs-selector-class {
+    color: #ade5fc;
+}
+
+.hljs-string,
+.hljs-bullet {
+    color: #a2fca2;
+}
+
+.hljs-type,
+.hljs-title,
+.hljs-section,
+.hljs-attribute,
+.hljs-quote,
+.hljs-built_in,
+.hljs-builtin-name {
+    color: #ffa;
+}
+
+.hljs-number,
+.hljs-symbol,
+.hljs-bullet {
+    color: #d36363;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal {
+    color: #fcc28c;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-code {
+    color: #888;
+}
+
+.hljs-regexp,
+.hljs-link {
+    color: #c6b4f0;
+}
+
+.hljs-meta {
+    color: #fc9b9b;
+}
+
+.hljs-deletion {
+    background-color: #fc9b9b;
+    color: #333;
+}
+
+.hljs-addition {
+    background-color: #a2fca2;
+    color: #333;
+}
+
+.hljs a {
+    color: inherit;
+}
+
+.hljs a:focus,
+.hljs a:hover {
+    color: inherit;
+    text-decoration: underline;
+}

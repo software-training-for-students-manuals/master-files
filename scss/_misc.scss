@@ -1,0 +1,30 @@
+
+/* SECTION 9: miscellaneous
+========================================================================== */
+
+/* titles with no top margin */
+
+@media print {
+    .no-top-margin {
+        margin-top: 0;
+    }
+}
+
+/* pages breaks */
+
+.page-break {
+    page-break-after: always;
+}
+
+/* stop elements from printing across pages */
+
+@media print {
+    table,
+    code,
+    .sidebar-note,
+    .sidebar-icon,
+    .toolbox {
+        page-break-inside: avoid;
+    }
+}
+

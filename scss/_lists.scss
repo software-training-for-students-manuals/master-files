@@ -1,0 +1,175 @@
+
+/* lists */
+
+ul,
+ol {
+    margin: 1em 0 0 3em;
+    counter-reset: instruction-counter-a;
+
+    @include mobile {
+        margin-left: 2rem;
+    }
+
+    ul,
+    ol {
+        margin: 0 0 0 3em;
+    }
+
+    li {
+        margin: 0 0 .5em 0;
+        padding: 0;
+        font-family: $body-font-family;
+        font-weight: $body-font-weight;
+    }
+
+    li::before {
+        counter-increment: instruction-counter-a;
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+// .instruction-list > ul 
+// {
+//     content:counter(nested-counter);
+// }
+
+/* instruction lists */
+
+.instruction-list {
+    list-style-type: none;
+    margin-left: 1em;
+
+    >li {
+        margin-top: .75em;
+        margin-left: 2em;
+        max-width: 80%;
+        background-image: linear-gradient(90deg, transparent 20%, #ddd 28%, transparent 100%);
+        background-size: 100% 1px;
+        background-position: top;
+        background-repeat: no-repeat;
+        padding: .5em;
+        padding-top: .75em;
+        padding-left: 1em;
+        position: relative;
+
+        @include mobile {
+            margin-left: 1em;
+            margin-right: 0;
+            padding-left: .5em;
+        }
+
+
+
+        &:first-of-type {
+            background-size: 0;
+
+        }
+    }
+
+    // for normal lists embedded
+    ul,
+    ol {
+        position: relative;
+
+        li {
+            margin-top: 0;
+            padding: .75em;
+        }
+
+        li::before {
+            content: none;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    ol>li {
+        margin: .5em;
+
+    }
+
+    li::before {
+        font-family: $heading-font-family;
+        font-weight: $heading-font-weight;
+        content: counter(instruction-counter-a);
+        border-radius: 100%;
+        color: white;
+        font-size: 1em;
+        padding: 3px 12px;
+        background-color: $lightgreen;
+        position: absolute;
+        left: -2.5em;
+        transition: .25s all;
+
+        @media print {
+            font-size: 0.8em;
+            padding: 3px 6px;
+        }
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+/* sub-instruction lists */
+
+.instruction-list .instruction-list {
+    counter-reset: instruction-counter-b;
+    list-style-type: none;
+    margin-left: 3em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    // for normal lists embedded
+    ul,
+    ol {
+        li {
+            margin-top: 0;
+            padding: 0;
+        }
+
+        li::before {
+            content: none;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    li {
+        @include mobile {
+            margin-left: 0;
+        }
+    }
+
+    li::before {
+        content:counter(instruction-counter-b);
+        counter-increment: instruction-counter-b;
+        border-radius: 100%;
+        color: white;
+        padding: 1px 10px;
+        background-color: #3498db;
+        position: absolute;
+
+        @include mobile {
+            padding: .125em .625em;
+
+
+        }
+
+    }
+
+
+
+}

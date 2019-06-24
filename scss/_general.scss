@@ -1,0 +1,361 @@
+/* SECTION 1: full document management and essential elements
+========================================================================== */
+
+/* CSS reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+
+    font-size: 100%;
+    //    font-size: 125%;
+
+
+}
+
+
+
+@media screen and (max-width: 400px) {
+    html {
+        font-size: 112.5%;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+}
+
+/* body */
+
+body {
+
+    margin: 0 auto 5em auto;
+    //    padding: 0 2em 0 2em;
+    //    border: 2em #fff solid;
+    max-width: 60em;
+
+    //    min-width: 20em;
+    @media screen and (max-width: 440px) {
+        max-width: 100%;
+    }
+
+    @include mobile {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    font-family: $body-font-family;
+    position: relative;
+    background-color: #fff;
+    background-color: $uw-light-gray;
+    font-size: 1em;
+
+    @media print {
+        padding: 0;
+    }
+
+
+}
+
+section {
+    position: relative;
+    padding: 2rem;
+}
+
+#outline ol li,
+.topic {
+    background-color: saturate(lighten($uw-gray-blue, 10%), 5%);
+
+    @media print {
+        background-color: white;
+    }
+}
+
+#outline ol li:nth-of-type(2n),
+section:nth-of-type(2n) {
+    background-color: lighten($lightblue, 50%);
+
+    @media print {
+        background-color: white;
+    }
+}
+
+.topic:first-of-type {
+    counter-reset: topic-number;
+
+}
+
+section.topic {
+    transition: .25s all ease;
+    border: 1px solid #dde;
+    border-top: none;
+    padding-top: 1rem;
+
+    @media print {
+        border: none;
+    }
+
+
+
+    &:first-of-type {
+        border-top: 1px solid #dde;
+    }
+
+    &:after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+
+    >h1:first-of-type {
+        cursor: pointer;
+
+        &:before {
+            counter-increment: topic-number;
+            content: counter(topic-number);
+            font-size: 1.25rem;
+            width: 1.125em;
+            height: 1.5rem;
+            background-color: $orange;
+            color: white;
+            display: inline-block;
+            border-radius: 100%;
+            padding: 0.625em;
+            text-align: center;
+            margin-bottom: .25em;
+            left: 1em;
+            position: absolute;
+
+            @include mobile {
+                left: .25em;
+                line-height: .9;
+                width: 1em;
+                height: 1em;
+                padding: .25em;
+            }
+
+        }
+
+        @include mobile {
+            max-width: 280px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.5rem;
+        }
+
+    }
+
+    h1:after {
+        content: "";
+        position: absolute;
+        height: .4em;
+        width: .4em;
+        background: linear-gradient(45deg, transparent 50%, $uw-gray-blue 50%);
+        right: .25em;
+        top: .5em;
+        top: 2rem;
+        transform: rotateZ(135deg);
+        transition: .25s all;
+    }
+
+}
+
+section.topic.collapsed {
+    transition: .25s all ease;
+    overflow: hidden;
+    opacity: .7;
+    height: 5rem;
+
+    @include mobile {
+        height: 4rem;
+    }
+
+    h1:after {
+        content: "";
+        background: linear-gradient(45deg, transparent 50%, $uw-darker-gray 50%);
+        transform: rotateZ(225deg);
+
+    }
+
+    >h1 {
+        background-size: 2px;
+        margin-bottom: 2rem;
+    }
+}
+
+hr {
+    display: block;
+    width: 100%;
+    border: 0;
+    padding-top: 1rem;
+    background-image: linear-gradient(90deg, transparent 0%, $uw-gray-blue 50%, transparent 100%);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+/* headings */
+
+h1 {
+    margin: 0;
+    padding: 0 0 1em 0;
+
+    #outline & {
+        padding: .25em 0 .5em 0;
+    }
+
+    border: 0;
+    border-color: #ecf0f1;
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
+    font-size: 2em;
+    text-align: center;
+    clear: both;
+    font-weight: 900;
+
+    @include mobile {
+        font-size: 1.5rem;
+    }
+
+    &:not(first-of-type) {
+        background-image: linear-gradient(90deg, transparent 0%, $uw-gray-blue 50%, transparent 100%);
+        background-size: 100% 2px;
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+
+
+    @media print {
+        margin: 1.75em 0 0 0;
+        padding: 0 0 0.2em 0;
+        font-size: 2.1em;
+    }
+}
+
+h2 {
+    margin: 1.5em 0 0 0;
+    padding: 0;
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
+    font-size: 1.7em;
+
+    @media print {
+        margin: 1.25em 0 0 0;
+        font-size: 1.5em;
+    }
+}
+
+h3 {
+    margin: 1.5em 0 0 0;
+    font-family: $heading-font-family;
+    font-weight: $body-font-weight;
+    font-style: italic;
+    font-size: 1.25em;
+    font-weight: 900;
+}
+
+/* paragraph text */
+h1,
+h2,
+h3 {
+    color: $uw-darker;
+}
+
+li,
+p {
+    margin: 1em 0 0 0;
+    font-family: $body-font-family;
+    font-weight: $body-font-weight;
+    font-size: 1.125rem;
+    line-height: 150%;
+
+    @media print {
+        font-size: 0.8em;
+    }
+}
+
+li>p {
+    margin-top: 0;
+    font-size: 1.125rem;
+    //    font-size: 1rem;
+}
+
+/* links */
+
+a {
+    color: $uw-teal;
+    text-decoration: none;
+    font-family: $body-font-family;
+    font-weight: 900;
+
+    h2 & {
+        font-family: $heading-font-family;
+    }
+
+    h3 & {
+        font-family: $heading-font-family;
+    }
+}
+
+a:hover {
+    color: #17A3BF;
+    transition: 0.1s linear;
+}
+
+/* lists */
+
+ul,
+ol {
+    margin: 1em 0 0 3em;
+    counter-reset: step-counter;
+
+    @include mobile {
+        margin-left: 2rem;
+    }
+
+    ul,
+    ol {
+        margin: 0 0 0 3em;
+    }
+
+    li {
+        margin: 0 0 .5em 0;
+        padding: 0;
+        font-family: $body-font-family;
+        font-weight: $body-font-weight;
+    }
+
+    li::before {
+        counter-increment: step-counter;
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+ul>ul,
+ol>ul {
+
+    // counter-reset: initial;
+}
+.instruction-list > ul 
+{
+    content:counter(nested-counter);
+}
+
+// ul:first-of-type,
+// ol:first-of-type {
+//     counter-reset: step-counter;
+
+// }
+
+strong {
+    font-weight: 800;
+}

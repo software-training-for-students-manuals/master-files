@@ -1,0 +1,23 @@
+/* SECTION 5: toolbox and sidebar icons
+   ========================================================================== */
+
+/* sidebar icons */
+
+.sidebar-icon,
+.sidebar-note .sidebar-icon {
+  margin: 1em 0 1em 1em;
+  padding: 0.25em;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 100%;
+  background-color: #EDF4F7;
+  float: right;
+
+  @media print {
+    width: 2em;
+    height: 2em;
+  }
+}
+
+/* toolbox */
+

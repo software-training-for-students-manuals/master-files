@@ -1,0 +1,56 @@
+/* SECTION 0: variables
+   ========================================================================== */
+
+/* DOCUMENT FONTS */
+
+// font used in heading elements and titles
+//$heading-font-family: "Roboto", sans-serif;
+//$heading-font-family: "PT Sans", sans-serif;
+$heading-font-family: "Verlag", sans-serif;
+$header-font-family: "Verlag", sans-serif;
+
+$heading-font-weight: 900;
+$heading-font-weight: 700;
+
+// font used in primary body text
+$body-font-family: "Verlag", sans-serif;
+$body-font-weight: 400;
+
+// font used in inline type text and code blocks
+$fixed-width-font: "Roboto Mono", monospace;
+
+
+/* Colors */
+
+$uw-red:	#c5050c;
+$uw-red-dark:	#9b0000;
+$uw-light-gray:	#f7f7f7;
+$uw-gray-blue:	#dadfe1;
+$uw-gray-darker:	#646569;
+$uw-dark-gray:	#646569;
+$uw-darker-gray:	#646569;
+$uw-anchor-color:	#0479a8;
+$uw-dark: #494949;
+$uw-darker: #292929;
+$uw-teal: #0479a8;
+
+$orange: #e4b12b;
+$lightgreen: #8cbe41;
+$lightblue: #327eb4;
+$teal: #3ea0a6;
+
+
+@mixin mobile {
+    @media screen and (max-width: 450px) {
+        @content; 
+    }
+}
+
+@mixin shadow {
+    box-shadow: 1px 1px 1px 1px #d2d2d2;
+}
+
+@mixin rounded {
+    border-radius: .5em;
+}
+
