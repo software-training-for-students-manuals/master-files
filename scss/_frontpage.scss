@@ -92,7 +92,7 @@
     flex-flow: column wrap;
     h1 {
         flex-basis: 100%;
-
+ 
 
     }
 
@@ -124,10 +124,10 @@
     .primary-topics {
         >li {
             &:before {
-                counter-increment: step-counter;
+                content: counter(topic-counter);
+                counter-increment: topic-counter;
                 padding: 0.25em .5em;
                 width: 1rem;
-                content: counter(step-counter);
                 font-family: $heading-font-family;
                 font-weight: $heading-font-weight;
                 text-align: center;
@@ -136,7 +136,10 @@
                 background-color: $orange;
                 float: left;
             }
-
+        }
+        >li:first-of-type {
+            counter-reset: topic-counter;
+        
         }
     }    
 
@@ -152,7 +155,8 @@
         &:before {
             padding: 0.25em .5em;
             width: 1em;
-            //            content: counter(step-counter);
+            content: counter(topic-counter);
+            counter-increment: (topic-counter);
             font-family: $heading-font-family;
             font-weight: $heading-font-weight;
             text-align: center;
@@ -184,7 +188,7 @@
                 position: absolute;
                 height: 0;
                 width: 0;
-                content: counter(new-counter);
+                // content: counter(new-counter);
             }
             a {
                 display: inline-block;

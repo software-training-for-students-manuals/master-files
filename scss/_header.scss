@@ -1,0 +1,102 @@
+.uw-global-bar {
+background-color: $uw-light-gray;
+z-index: 10000; 
+    margin: auto;
+    display: block;
+    max-width: 960px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 2.25rem;
+    // margin-top: -7%;
+    margin-bottom: 2rem;
+    padding: 10px;
+    padding-bottom: 0;
+    // border: 1px solid #ddd;
+    // border-top: 0;
+    &:after {
+        content:'';
+        position: absolute;
+        background-color: $uw-light-gray;
+        height: 2.25rem;
+        width: 200%;
+        border-bottom: 1px solid #ddd;
+        left: -50%;
+        top: 2.25rem;
+        top: 0;
+        z-index: -1;
+        @media screen and (max-width: 700px)  {
+            display: block;
+            opacity: 0;
+    
+        }
+    }
+
+    @media screen and (max-width: 700px)  {
+        padding: 1rem;
+
+    }
+    @media screen and (max-width: 420px)  {
+        display: none;
+        padding: 1rem;
+
+    }
+
+// border: 1px solid green;
+    a {
+        color: darken($uw-dark-gray, 10%);
+        font-weight: 100;
+        font-size: 1rem;
+        flex: 5;
+    }
+
+    display: flex;
+    flex-flow: row wrap;
+
+    nav {
+        flex: 4;
+        // right: 0;
+        position: relative;
+        display: inline-block;
+        // border: 1px solid blue;
+    }
+
+    ul {
+        display: inline-block;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        // border: 1px solid blue;
+        @media screen and (max-width: 700px)  {
+            display: block;
+    
+        }
+    
+    }
+
+    li {
+        padding: 0;
+        line-height: 1.1;
+        // border: 1px solid blue;
+        // text-align: right;
+        // flex: 1;
+        // justify-content: right;
+        // flex-basis: 100px;
+        display: inline-block;
+        a {
+            &:hover {
+                color: $uw-dark-gray;
+            }
+        }
+
+        @media screen and (max-width: 700px)  {
+            display: block;
+            text-align: right;
+    
+        }
+    }
+    
+}
